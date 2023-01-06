@@ -1,0 +1,17 @@
+import 'package:flutter/cupertino.dart';
+import 'package:taskappfigma/Screens/Auth%20screen/auth_screen.dart';
+import 'package:taskappfigma/Screens/Home%20Screen/home_screen.dart';
+import 'package:taskappfigma/Screens/Splash%20Screen/splash_screen.dart';
+
+class AppRoutes {
+
+      static Map<String,Widget Function(BuildContext context)> getRoutes(BuildContext context){
+          return{
+            SplashScreen.routeName : (context) => const SplashScreen(),
+            AuthScreen.routeName : (context) => const AuthScreen(),
+            HomeScreen.routeName : (context) =>  HomeScreen(),
+
+            };
+         }
+
+}
