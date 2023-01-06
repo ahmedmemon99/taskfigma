@@ -21,7 +21,7 @@ class AuthScreen extends StatelessWidget {
         scrollBehavior: MyBehavior(),
         slivers: [
           SliverFillRemaining(
-            hasScrollBody: false,
+            hasScrollBody: true,
             child: Row(
               children:  const [
 
