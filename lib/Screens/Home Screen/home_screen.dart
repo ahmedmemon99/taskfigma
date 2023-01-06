@@ -34,14 +34,14 @@ class HomeScreen extends StatelessWidget {
         borderRadius: 24.0,
         showShadow: true,
         angle: 0.0,
+
         backgroundColor: AppColors.sidedDrawerBgColor,
-        slideWidth: MediaQuery.of(context).size.width* 0.56,
+        slideWidth: MediaQuery.of(context).size.width* 0.6,
       ),
       backgroundColor: AppColors.homeScreenBgColor,
       appBar:PreferredSize(preferredSize:Size.fromHeight(MediaQuery.of(context).size.height * 0.12 ),
               child:  HomeHeader(
                           onPressed: (){
-                          print('pressed');
 
                           controller.open!();
 

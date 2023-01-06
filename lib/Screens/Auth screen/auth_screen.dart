@@ -22,7 +22,7 @@ class AuthScreen extends StatelessWidget {
         slivers: [
           SliverFillRemaining(
             hasScrollBody: false,
-            child: Column(
+            child: Row(
               children:  const [
 
                 AuthHeader(),
