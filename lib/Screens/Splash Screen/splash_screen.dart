@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:taskappfigma/AppData/app_colors.dart';
 import 'package:taskappfigma/AppData/app_fonts.dart';
 import 'package:taskappfigma/AppData/app_images.dart';
+import 'package:taskappfigma/common%20widget/drawer.dart';
 
 
 
@@ -17,6 +18,7 @@ class SplashScreen extends StatelessWidget {
     final deviceWidth =MediaQuery.of(context).size.width;
     final textScale = MediaQuery.of(context).textScaleFactor;
     return Scaffold(
+      
       backgroundColor: AppColors.scaffoldBackgroundColor,
       body:SingleChildScrollView(
         child: Column(

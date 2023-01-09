@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:taskappfigma/Bloc/bloc_events.dart';
-import 'package:taskappfigma/Bloc/bloc_states.dart';
+import 'package:taskappfigma/Bloc/product%20Bloc/bloc_events.dart';
+import 'package:taskappfigma/Bloc/product%20Bloc/bloc_states.dart';
 import 'package:taskappfigma/Models/product.dart';
 import 'package:taskappfigma/Repository/product_repository.dart';
 

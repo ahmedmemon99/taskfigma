@@ -5,8 +5,8 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../Screens/menu screen/menu_screen.dart';
 
 
-class Drawer extends StatelessWidget {
-   Drawer({Key? key}) : super(key: key);
+class CustomDrawer extends StatelessWidget {
+   CustomDrawer({Key? key}) : super(key: key);
 
   final ZoomDrawerController drawerController = ZoomDrawerController();
 

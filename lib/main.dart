@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:taskappfigma/Bloc/bloc.dart';
+import 'package:taskappfigma/Bloc/bottom%20navigation/navigation_bloc.dart';
+import 'package:taskappfigma/Bloc/product%20Bloc/bloc.dart';
 import 'package:taskappfigma/Routes/routes.dart';
 import 'package:taskappfigma/Screens/Splash%20Screen/splash_screen.dart';
 
@@ -18,8 +19,11 @@ class TaskFigmaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ProductBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => ProductBloc(),),
+        BlocProvider(create: (context) => NavigationBloc())
+      ],
       child: MaterialApp(
         initialRoute: SplashScreen.routeName,
         routes: AppRoutes.getRoutes(context),

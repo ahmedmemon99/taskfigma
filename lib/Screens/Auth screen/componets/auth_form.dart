@@ -4,10 +4,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:taskappfigma/AppData/app_colors.dart';
 import 'package:taskappfigma/AppData/app_fonts.dart';
 import 'package:taskappfigma/AppData/app_images.dart';
-import 'package:taskappfigma/Bloc/bloc_events.dart';
+import 'package:taskappfigma/Bloc/product%20Bloc/bloc_events.dart';
 import 'package:taskappfigma/Screens/Home%20Screen/home_screen.dart';
 import 'package:taskappfigma/common%20widget/custom_button.dart';
-import '../../../Bloc/bloc.dart';
+import '../../../Bloc/product Bloc/bloc.dart';
 
 class AuthForm extends StatelessWidget {
   const AuthForm({Key? key}) : super(key: key);
