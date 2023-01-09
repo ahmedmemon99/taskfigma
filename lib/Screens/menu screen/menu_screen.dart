@@ -12,15 +12,12 @@ class MenuScreen extends StatelessWidget {
     final deviceWidth =MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.sidedDrawerBgColor,
-      body:
-      Padding(
+      body: Padding(
         padding: EdgeInsets.only(top: deviceHeight * 0.1768,left: deviceWidth * 0.111),
         child:
         Column(
           children: [
             ...List.generate(5, (index) => const menuitem.MenuItem()),
-
-
           ],
         ),
       )

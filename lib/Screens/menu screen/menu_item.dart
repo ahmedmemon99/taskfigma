@@ -11,7 +11,6 @@ class MenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final deviceHeight =MediaQuery.of(context).size.height - MediaQuery.of(context).viewPadding.top - MediaQuery.of(context).viewPadding.bottom;
     final deviceWidth =MediaQuery.of(context).size.width;
     return LayoutBuilder(
@@ -31,7 +30,7 @@ class MenuItem extends StatelessWidget {
                 ],
               ),
               Container(
-                margin:  EdgeInsets.only(top: 23,left: 20),
+                margin:  const EdgeInsets.only(top: 23,left: 20),
                 color: AppColors.menuItemDividerColor,
                 height: 1,
                 width: 132,

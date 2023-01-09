@@ -5,11 +5,8 @@ import 'package:taskappfigma/AppData/app_fonts.dart';
 class AuthHeader extends StatelessWidget {
   const AuthHeader({Key? key,}) : super(key: key);
 
-
-
   @override
   Widget build(BuildContext context) {
-
     final deviceSize = MediaQuery.of(context).size;
     return Stack(
       alignment: Alignment.topRight,

@@ -7,7 +7,6 @@ import 'package:taskappfigma/AppData/app_images.dart';
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key,required this.onPressed}) : super(key: key);
 
-
   final VoidCallback onPressed;
 
   @override

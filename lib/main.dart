@@ -10,8 +10,7 @@ void main()async{
 
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown]);
- // runApp(DevicePreview(builder: (c)=> TaskFigmaApp(),enabled: true,));
- runApp(const  TaskFigmaApp());
+  runApp(const  TaskFigmaApp());
 }
 
 class TaskFigmaApp extends StatelessWidget {

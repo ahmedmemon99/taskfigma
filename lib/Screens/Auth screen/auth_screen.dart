@@ -17,30 +17,12 @@ class AuthScreen extends StatelessWidget {
 
     return  Scaffold(
       backgroundColor:  AppColors.scaffoldBackgroundColor,
-      body: CustomScrollView(
-        scrollBehavior: MyBehavior(),
-        slivers: [
-          SliverFillRemaining(
-            hasScrollBody: true,
-            child: Row(
-              children:  const [
-
-                AuthHeader(),
-                Expanded(child: AuthForm())
-
-              ],
-            ),
-          )
-        ],
-        // child: Column(
-        //   children: const [
-        //        AuthHeader(),
-        //       const Expanded(child: AuthForm())
-        //
-        //   ],
-        // ),
-      ),
-
+      body:Column(
+          children: const [
+               AuthHeader(),
+               Expanded(child: AuthForm())
+          ],
+        ),
 
     );
   }

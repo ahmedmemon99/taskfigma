@@ -25,28 +25,16 @@ class SplashScreen extends StatelessWidget {
                height: deviceHeight * 0.1540,
                margin:  EdgeInsets.only(top: deviceHeight * 0.0792,left: deviceWidth * 0.14,right: deviceWidth * 0.14,bottom: deviceHeight * 0.0325),
                width: double.infinity,
-               child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                   Text(
-                        'Find your',
-                              textScaleFactor: textScale,
-                              style: const TextStyle(
-                              fontSize: 48 ,
-                              color: AppColors.splashTextColor,
-                              fontFamily: AppFonts.raleWayExtraBold
-                        )),
-                   Text(
-                       'Gadget',
-                       textScaleFactor: textScale,
-                       style: const TextStyle(
-                           fontSize: 48 ,
-                           color: AppColors.splashTextColor,
-                           fontFamily: AppFonts.raleWayExtraBold
-                       )),
-                 ],
+               child: Center(
+                 child: Text(
+                      'Find your\nGadget',
+                            textScaleFactor: textScale,
+                            style: const TextStyle(
+                            fontSize: 50 ,
+                            color: AppColors.splashTextColor,
+                            fontFamily: AppFonts.raleWayExtraBold
+                      )),
                ),
-
               ),
             SizedBox(
                 height: deviceHeight * 0.4872,
@@ -80,44 +68,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
-// Padding(
-// padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.0792,left:MediaQuery.of(context).size.height * 0.09),
-// child:
-// const Text(
-// 'Find your Gadget',
-// style: TextStyle(
-// color: AppColors.splashTextColor,
-// fontSize: 60,
-// fontFamily: AppFonts.raleWayExtraBold
-// )),
-// ),
-// const SizedBox(height: 15,),
-// Image.asset(AppImages.splashImg,height: MediaQuery.of(context).size.height * 0.48,),
-// SizedBox(height: MediaQuery.of(context).size.height * 0.0614),
-// InkWell(
-// onTap: (){
-//
-// Navigator.of(context).pushReplacementNamed('/authScreen');
-//
-// },
-// child: Container(
-// alignment: Alignment.center,
-// width: MediaQuery.of(context).size.width * 0.75 ,
-// height: MediaQuery.of(context).size.height * 0.075,
-// decoration:  BoxDecoration(
-// boxShadow: [
-// BoxShadow(color: Colors.black.withOpacity(0.4),blurRadius: 20)
-// ],
-// color: AppColors.splashTextColor,
-// borderRadius: const BorderRadius.all(Radius.circular(10))
-// ),
-// child: const Text('Get Started',
-// style: TextStyle(
-// fontFamily: AppFonts.raleWayRegular,
-// fontWeight: FontWeight.bold,
-// fontSize: 18,
-// color: AppColors.splashScreenButtonColor
-// ),
-// ),
-// ),
-// )

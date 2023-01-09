@@ -7,7 +7,6 @@ import 'package:taskappfigma/AppData/app_images.dart';
 import 'package:taskappfigma/Bloc/bloc_events.dart';
 import 'package:taskappfigma/Screens/Home%20Screen/home_screen.dart';
 import 'package:taskappfigma/common%20widget/custom_button.dart';
-
 import '../../../Bloc/bloc.dart';
 
 class AuthForm extends StatelessWidget {
@@ -16,7 +15,6 @@ class AuthForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: double.infinity,
       padding: EdgeInsets.only(
               left: MediaQuery.of(context).size.width * 0.12,
               right: MediaQuery.of(context).size.width * 0.12,
@@ -30,14 +28,12 @@ class AuthForm extends StatelessWidget {
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          //mainAxisAlignment: MainAxisAlignment.spaceAround,
           children:  [
              const Text('Login',
               style: TextStyle(
                         fontFamily: AppFonts.raleWayBold,
                         fontSize: 18),),
             const SizedBox(height: 20,),
-
             TextFormField(
               decoration:  InputDecoration(
                 label: Row(
