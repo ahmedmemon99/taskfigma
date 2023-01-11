@@ -16,6 +16,9 @@ class AppColors{
   static const Color menuItemDividerColor = Color(0xffF4F4F8);
   static const Color unSelectedBottomNavigationIconColor = Color(0xff200E32);
   static const Color selectedBottomNavigationIconColor = Color(0xff5956E9);
+  static const Color productDetailBgColor = Color(0xFFF6F6F9);
+  static Color descriptionTextColor = const Color(0xFF000000).withOpacity(0.5);
+
 
 
 }

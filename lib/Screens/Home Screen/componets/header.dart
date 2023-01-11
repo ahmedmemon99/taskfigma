@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:taskappfigma/AppData/app_colors.dart';
 import 'package:taskappfigma/AppData/app_fonts.dart';
 import 'package:taskappfigma/AppData/app_images.dart';
-
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({Key? key,required this.onPressed}) : super(key: key);
+  const HomeHeader({Key? key}) : super(key: key);
 
-  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
-    return PreferredSize(
-        preferredSize:  Size(double.infinity,deviceSize.height * 12),
-        child: Container(
-          margin: EdgeInsets.only(top: deviceSize.height * 0.0758,left:deviceSize.width * 0.131,right:deviceSize.width * 0.1 ),
-          child: Row(
-            children: [
+      return PreferredSize(
+          preferredSize:  Size(double.infinity,deviceSize.height * 12),
+          child: Container(
+            margin: EdgeInsets.only(top: deviceSize.height * 0.0758,left:deviceSize.width * 0.131,right:deviceSize.width * 0.1 ),
+            child: Row(
+              children: [
               GestureDetector(
-                  onTap: onPressed ,
+                  onTap: () {
+                       ZoomDrawer.of(context)!.open();
+                    },
                   child: SvgPicture.asset(AppCustomIcons.homeDrawer)),
               SizedBox(width: deviceSize.width * 0.063,),
               Expanded(

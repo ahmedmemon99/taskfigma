@@ -14,20 +14,13 @@ class HomeScreen extends StatelessWidget {
 
   static const String routeName = '/homeScreen';
 
-  final ZoomDrawerController drawerController = ZoomDrawerController();
-  
   @override
   Widget build(BuildContext context) {
     final devicSize =MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.homeScreenBgColor,
       appBar: PreferredSize(preferredSize:Size.fromHeight(MediaQuery.of(context).size.height * 0.12 ),
-              child:  HomeHeader(
-                          onPressed: (){
-                            print('working');
-                            drawerController.open!();
-                            print('passsed');
-                         },)),
+              child: const HomeHeader()),
       body: ListView(
              physics: const BouncingScrollPhysics(),
              children:  [

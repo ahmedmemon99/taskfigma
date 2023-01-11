@@ -15,12 +15,13 @@ class Mainscreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.sidedDrawerBgColor,
       body: ZoomDrawer(
+        mainScreenScale: 0.41  ,
         mainScreenTapClose: true,
         mainScreen: HomeScreen(),
         menuScreen: const MenuScreen(),
         showShadow: true,
         menuScreenWidth: MediaQuery.of(context).size.width,
-        slideWidth: MediaQuery.of(context).size.width * 0.6,
+        slideWidth: MediaQuery.of(context).size.width * 0.61,
         angle: 0.0,
         borderRadius: 20,
       ),

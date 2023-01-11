@@ -8,7 +8,7 @@ class AppCustomIcons{
 
   static const messageIcon = 'assets/images/icons/Message.svg';
   static const lockIcon = 'assets/images/icons/Lock.svg';
-  static const homeDrawer = 'assets/images/icons/Vector.svg';
+  static const homeDrawer = 'assets/images/icons/next.svg';
   static const search = 'assets/images/icons/Search.svg';
   static const profile = 'assets/images/icons/Profile.svg';
   static const cart = 'assets/images/icons/Buy.svg';
@@ -20,6 +20,12 @@ class AppCustomIcons{
   static const selectedFavorite = 'assets/images/icons/selectedHeart.svg';
   static const selectedProfile = 'assets/images/icons/selectedProfile.svg';
   static const selectedCart = 'assets/images/icons/selectedCart.svg';
+  static const logout = 'assets/images/icons/Logout.svg';
+  static const authBgImage = 'assets/images/Login.jpg';
+  static const menuScreenCircle = 'assets/images/Ellipse 19.svg';
+  static const next = 'assets/images/icons/next.svg';
+
+
 
 
 

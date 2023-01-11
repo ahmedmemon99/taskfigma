@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskappfigma/AppData/app_colors.dart';
+import 'package:taskappfigma/AppData/app_images.dart';
 import 'package:taskappfigma/Screens/Auth%20screen/componets/auth_form.dart';
 import 'package:taskappfigma/Screens/Auth%20screen/componets/auth_header.dart';
 import 'package:taskappfigma/common%20widget/customclass.dart';
@@ -12,18 +13,20 @@ class AuthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final deviceSize = MediaQuery.of(context).size;
-
-    return  Scaffold(
-      backgroundColor:  AppColors.scaffoldBackgroundColor,
-      body:Column(
-          children: const [
-               AuthHeader(),
-               Expanded(child: AuthForm())
-          ],
+    return Scaffold(
+      body:Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage(AppCustomIcons.authBgImage),fit: BoxFit.fill)
         ),
-
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+                 AuthHeader(),
+                 Expanded(child: AuthForm())
+            ],
+          ),
+      ),
     );
   }
 }
