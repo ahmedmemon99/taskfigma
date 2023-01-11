@@ -10,7 +10,7 @@ import 'package:sizer/sizer.dart';
 void main()async{
 
   WidgetsFlutterBinding.ensureInitialized();
-  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown]);
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   //runApp(DevicePreview(builder: (context) =>TaskFigmaApp(),));
   runApp(const  TaskFigmaApp());

@@ -22,7 +22,7 @@ class HomeHeader extends StatelessWidget {
                   onTap: () {
                        ZoomDrawer.of(context)!.open();
                     },
-                  child: SvgPicture.asset(AppCustomIcons.homeDrawer)),
+                  child:SvgPicture.asset(AppCustomIcons.homeDrawer)),
               SizedBox(width: deviceSize.width * 0.063,),
               Expanded(
                 child: TextFormField(

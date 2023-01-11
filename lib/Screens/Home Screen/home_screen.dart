@@ -10,7 +10,7 @@ import 'package:taskappfigma/Screens/Home%20Screen/componets/bottomnavigation.da
 import 'componets/header.dart';
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({Key? key}) : super(key: key);
+   const HomeScreen({Key? key}) : super(key: key);
 
   static const String routeName = '/homeScreen';
 

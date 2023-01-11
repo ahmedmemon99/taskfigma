@@ -11,14 +11,13 @@ import 'package:taskappfigma/common%20widget/custom_button.dart';
 import '../../../Bloc/product Bloc/bloc.dart';
 
 class AuthForm extends StatelessWidget {
-  const AuthForm({Key? key}) : super(key: key);
+  const   AuthForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height - MediaQuery.of(context).viewPadding.top;
     return SingleChildScrollView(
       child: Container(
-        height: 68.2.h,
         padding: EdgeInsets.only(
                 left: MediaQuery.of(context).size.width * 0.12,
                 right: MediaQuery.of(context).size.width * 0.12,
@@ -106,7 +105,6 @@ class AuthForm extends StatelessWidget {
                         fontSize: 15))),
               ),
               SizedBox(height: deviceHeight * 0.134,),
-
             ],
           ),
         ),

@@ -58,7 +58,7 @@ class MenuScreen extends StatelessWidget {
               Padding(
                  padding: EdgeInsets.only(top: deviceHeight * 0.015,),
                  child:  CircleAvatar(
-                 radius: deviceHeight * 0.06,
+                 radius: deviceHeight * 0.04,
                  backgroundColor: AppColors.authHeaderSmallOutCircleColor,
                 ),
                   ),
