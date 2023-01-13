@@ -11,18 +11,24 @@ class ProductBloc extends Bloc<ProductEvents,ProductStates>{
 
     on<LoadingEvent>(onLoading);
     on<LoadedEvent>(onLoaded);
+    on<SearchEvent>(onSearch);
 
   }
 
   void onLoading(LoadingEvent event, Emitter<ProductStates> emit){
      emit(LoadingState());
     }
+    
   void onLoaded(LoadedEvent event, Emitter<ProductStates> emit)async{
     emit(LoadingState());
     List<Product> list = await ProductRepository.getProducts();
     emit(LoadedState(list: list));
   }
 
+  void onSearch(SearchEvent event, Emitter<ProductStates> emit){
 
+    emit(ItemNotFoundState());
+
+  }
 
 }

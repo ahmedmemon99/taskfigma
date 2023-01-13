@@ -5,6 +5,7 @@ import 'package:taskappfigma/AppData/app_colors.dart';
 import 'package:taskappfigma/AppData/app_fonts.dart';
 import 'package:taskappfigma/Bloc/product%20Bloc/bloc.dart';
 import 'package:taskappfigma/Bloc/product%20Bloc/bloc_states.dart';
+import 'package:taskappfigma/Screens/Home%20Screen/componets/item_not_found.dart';
 import 'package:taskappfigma/Screens/Home%20Screen/componets/product_listview.dart';
 import 'package:taskappfigma/Screens/Home%20Screen/componets/bottomnavigation.dart';
 import 'componets/header.dart';
@@ -18,10 +19,20 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final devicSize =MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.homeScreenBgColor,
-      appBar: PreferredSize(preferredSize:Size.fromHeight(MediaQuery.of(context).size.height * 0.12 ),
+      resizeToAvoidBottomInset: false,
+        backgroundColor: AppColors.homeScreenBgColor,
+       appBar: PreferredSize(preferredSize:Size.fromHeight(MediaQuery.of(context).size.height * 0.12 ),
               child: const HomeHeader()),
-      body: ListView(
+      body: BlocBuilder<ProductBloc, ProductStates>(
+
+  builder: (context, state) {
+
+            if(state is ItemNotFoundState){
+
+              return const ItemNotFound();
+            }
+
+    return ListView(
              physics: const BouncingScrollPhysics(),
              children:  [
                Container(
@@ -43,7 +54,9 @@ class HomeScreen extends StatelessWidget {
                    return const Center(child: Text('No Items Found'));
                  },),
        ],
-     ),
+     );
+  },
+),
       bottomNavigationBar: const BottomNavigation()
     );
   }

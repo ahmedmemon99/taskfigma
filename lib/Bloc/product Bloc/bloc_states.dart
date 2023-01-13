@@ -11,3 +11,15 @@ class LoadedState extends ProductStates{
 
    final List<Product> list;
 }
+
+class SearchState extends ProductStates{
+
+  SearchState({required this.list});
+
+  final List<Product> list;
+
+}
+class ItemNotFoundState extends ProductStates{
+
+
+}

@@ -1,6 +1,9 @@
 class AppImages{
 
   static const splashImg = 'assets/images/Saly-19.png';
+  static const notfoundImg = 'assets/images/notfound.png';
+
+
 
 }
 
@@ -24,6 +27,8 @@ class AppCustomIcons{
   static const authBgImage = 'assets/images/Login.jpg';
   static const menuScreenCircle = 'assets/images/Ellipse 19.svg';
   static const next = 'assets/images/icons/next.svg';
+  static const back = 'assets/images/icons/back.svg';
+
 
 
 

@@ -8,8 +8,6 @@ import '../Screens/menu screen/menu_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
    CustomDrawer({Key? key}) : super(key: key);
-
-
    final ZoomDrawerController _controller =ZoomDrawerController();
 
   @override

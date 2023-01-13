@@ -5,6 +5,8 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:taskappfigma/AppData/app_colors.dart';
 import 'package:taskappfigma/AppData/app_fonts.dart';
 import 'package:taskappfigma/AppData/app_images.dart';
+import 'package:taskappfigma/Bloc/product%20Bloc/bloc.dart';
+import 'package:taskappfigma/Bloc/product%20Bloc/bloc_events.dart';
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
 
@@ -12,6 +14,7 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
+    final deviceHeight =MediaQuery.of(context).size.height;
       return PreferredSize(
           preferredSize:  Size(double.infinity,deviceSize.height * 12),
           child: Container(
@@ -26,6 +29,14 @@ class HomeHeader extends StatelessWidget {
               SizedBox(width: deviceSize.width * 0.063,),
               Expanded(
                 child: TextFormField(
+                  onChanged: (val){
+
+                    if(val.length > 5) {
+                      context.read<ProductBloc>().add(SearchEvent());
+                    }
+
+                  },
+                         style: TextStyle(color: Colors.black,fontSize:deviceHeight * 0.022,fontFamily: AppFonts.raleWaySemiBold),
                         decoration: InputDecoration(
                           focusedBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -50,6 +61,11 @@ class HomeHeader extends StatelessWidget {
                           child: SvgPicture.asset(AppCustomIcons.search),
                         )
                 ),
+                  onEditingComplete: (){
+
+                    context.read<ProductBloc>().add(LoadedEvent());
+
+                  },
               ),
               ),
             ],

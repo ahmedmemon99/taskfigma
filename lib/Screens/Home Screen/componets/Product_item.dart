@@ -5,11 +5,19 @@ import 'package:taskappfigma/AppData/app_fonts.dart';
 import 'package:taskappfigma/Models/product.dart';
 import 'package:taskappfigma/Screens/Product%20Details/product_details.dart';
 
-class ProductItem extends StatelessWidget {
+import '../../../AppData/app_images.dart';
+
+class ProductItem extends StatefulWidget {
   const ProductItem({Key? key,required this.product,required this.index}) : super(key: key);
 
   final Product product;
   final int index;
+
+  @override
+  State<ProductItem> createState() => _ProductItemState();
+}
+
+class _ProductItemState extends State<ProductItem>{
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +26,7 @@ class ProductItem extends StatelessWidget {
       alignment: Alignment.topCenter,
       children: [
         GestureDetector(
-          onTap: () => Navigator.of(context).pushNamed(ProductDetails.routeName),
+          onTap: () => Navigator.of(context).pushNamed(ProductDetails.routeName,arguments: widget.product),
           child: Container(
             alignment: Alignment.bottomCenter,
             child: LayoutBuilder(
@@ -39,12 +47,12 @@ class ProductItem extends StatelessWidget {
                       children: [
                         Container(
                           margin: EdgeInsets.only(top: constrains.maxHeight * 0.4,left: constrains.maxWidth * 0.2435,right:  deviceSize.width * 0.09),
-                          child:  Text(product.title,maxLines: 2,style:  TextStyle(fontFamily: AppFonts.raleWaySemiBold,fontSize: 22.sp ) ,),
+                          child:  Text(widget.product.title,maxLines: 2,style:  TextStyle(fontFamily: AppFonts.raleWaySemiBold,fontSize: 22.sp ) ,),
                         ),
                         const SizedBox(height: 7.44,),
                         Container(
                           margin: const EdgeInsets.only(top: 7.44),
-                          child:  FittedBox(child: Text('From £${product.price}',style: TextStyle(color: AppColors.scaffoldBackgroundColor,fontFamily: AppFonts.raleWayBold,fontSize: 17.sp),)),
+                          child:  FittedBox(child: Text('From £${widget.product.price}',style: TextStyle(color: AppColors.scaffoldBackgroundColor,fontFamily: AppFonts.raleWayBold,fontSize: 14.sp),)),
                         ),
                          SizedBox(height: constrains.maxHeight * 0.034,)
                       ],
@@ -56,11 +64,11 @@ class ProductItem extends StatelessWidget {
         ),
         LayoutBuilder(
             builder: (context, constraints) {
-              return Image.network(
-                product.image,
+              return FadeInImage(
                 height: constraints.maxHeight * 0.5176,
                 width: constraints.maxWidth * 0.7307,
-                fit: BoxFit.fitWidth,
+                placeholder: const AssetImage(AppImages.splashImg),
+                image: NetworkImage(widget.product.image),
               );
             }
         )

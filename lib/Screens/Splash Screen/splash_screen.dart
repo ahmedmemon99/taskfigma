@@ -6,6 +6,8 @@ import 'package:taskappfigma/AppData/app_fonts.dart';
 import 'package:taskappfigma/AppData/app_images.dart';
 import 'package:taskappfigma/common%20widget/drawer.dart';
 
+import '../Product Details/product_details.dart';
+
 
 
 class SplashScreen extends StatelessWidget {
