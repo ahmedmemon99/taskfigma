@@ -17,41 +17,44 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final devicSize =MediaQuery.of(context).size;
+    final deviceSize =MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-        backgroundColor: AppColors.homeScreenBgColor,
-       appBar: PreferredSize(preferredSize:Size.fromHeight(MediaQuery.of(context).size.height * 0.12 ),
-              child: const HomeHeader()),
-      body: BlocBuilder<ProductBloc, ProductStates>(
+            backgroundColor: AppColors.homeScreenBgColor,
+            appBar: PreferredSize(preferredSize:Size.fromHeight(MediaQuery.of(context).size.height * 0.12 ),
+                    child: const HomeHeader()),
+            body: BlocBuilder<ProductBloc, ProductStates>(
+                    builder: (context, state) {
 
-  builder: (context, state) {
+                          if(state is ItemNotFoundState){
+                            return const ItemNotFound();
+                          }
 
-            if(state is ItemNotFoundState){
+                         if(state is LoadedState){
 
-              return const ItemNotFound();
-            }
+                           return ProductListView( list: state.list,);
 
-    return ListView(
-             physics: const BouncingScrollPhysics(),
-             children:  [
-               Container(
-                 margin: EdgeInsets.only(left: devicSize.width * 0.121,top: devicSize.height * 0.0613,right: devicSize.width * 0.121,bottom: 40 ),
-                 child:   Text('Order online\ncollection in Store',
-                     style: TextStyle(fontSize: devicSize.width * 0.0821 ,fontFamily: AppFonts.raleWayBold)
-                 ),
-               ),
-               BlocBuilder<ProductBloc,ProductStates>(
-                 builder: (context,state){
-                   if(state is LoadingState){
-                     return
-                       const Center(child: CircularProgressIndicator(),);
-                   }
-                   if(state is LoadedState){
-                     return
-                       ProductListView( list: state.list,);
-                   }
-                   return const Center(child: Text('No Items Found'));
+                          }
+                            return ListView(
+                             physics: const BouncingScrollPhysics(),
+                               children:  [
+                               Container(
+                                 margin: EdgeInsets.only(left: deviceSize.width * 0.121,top: deviceSize.height * 0.0613,right: deviceSize.width * 0.121,bottom: 40 ),
+                                 child:   Text('Order online\ncollection in Store',
+                                     style: TextStyle(fontSize: deviceSize.width * 0.0821 ,fontFamily: AppFonts.raleWayBold)
+                                 ),
+                               ),
+                               BlocBuilder<ProductBloc,ProductStates>(
+                                 builder: (context,state){
+                                   if(state is LoadingState){
+                                     return
+                                       const Center(child: CircularProgressIndicator(),);
+                                   }
+                                   if(state is LoadedState){
+                                     return
+                                       ProductListView( list: state.list,);
+                                   }
+                                   return const Center(child: Text('No Items Found'));
                  },),
        ],
      );
