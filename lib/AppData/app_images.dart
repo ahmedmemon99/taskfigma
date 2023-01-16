@@ -28,8 +28,8 @@ class AppCustomIcons{
   static const menuScreenCircle = 'assets/images/Ellipse 19.svg';
   static const next = 'assets/images/icons/next.svg';
   static const back = 'assets/images/icons/back.svg';
-
-
+  static const delete = 'assets/images/icons/Delete.svg';
+  static const notification = 'assets/images/icons/Notification.svg';
 
 
 

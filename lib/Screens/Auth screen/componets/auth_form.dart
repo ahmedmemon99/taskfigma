@@ -59,6 +59,7 @@ class AuthForm extends StatelessWidget {
               ),
               SizedBox(height: deviceHeight * 0.014,),
               TextFormField(
+                textCapitalization: TextCapitalization.words,
                 obscureText: true,
                 style: TextStyle(color: Colors.black,fontSize:deviceHeight * 0.025,fontFamily: AppFonts.raleWaySemiBold),
                 decoration:  InputDecoration(
@@ -90,14 +91,12 @@ class AuthForm extends StatelessWidget {
               CustomButton(onPressed: () {
                 context.read<ProductBloc>().add(LoadedEvent());
                 Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
-
               },text: 'Login',),
               Center(
                 child: TextButton(
                   style: TextButton.styleFrom(
                       splashFactory: NoSplash.splashFactory),
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                   child:const  Text('Create account',
                     style: TextStyle(
                         color: AppColors.splashScreenButtonColor,

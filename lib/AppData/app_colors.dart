@@ -18,6 +18,8 @@ class AppColors{
   static const Color selectedBottomNavigationIconColor = Color(0xff5956E9);
   static const Color productDetailBgColor = Color(0xFFF6F6F9);
   static Color descriptionTextColor = const Color(0xFF000000).withOpacity(0.5);
+  static Color basketInfoBannerColor =const Color(0xFFD3F2FF);
+  static Color basketItemButtonColor =const Color(0xFF7DCCEC);
 
 
 

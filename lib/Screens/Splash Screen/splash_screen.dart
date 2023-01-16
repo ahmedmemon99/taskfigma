@@ -26,7 +26,6 @@ class SplashScreen extends StatelessWidget {
            Container(
              height: deviceHeight * 0.1540,
              margin:  EdgeInsets.only(top: deviceHeight * 0.0792,left: deviceWidth * 0.14,right: deviceWidth * 0.14,bottom: deviceHeight * 0.0325),
-             width:   deviceWidth * 0.705,
              child: const FittedBox(
                child: Text(
                     'Find your\nGadget',

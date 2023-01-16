@@ -13,11 +13,12 @@ class Mainscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.sidedDrawerBgColor,
       body: ZoomDrawer(
-        mainScreenScale: 0.41  ,
+        mainScreenScale: 0.41,
         mainScreenTapClose: true,
-        mainScreen: HomeScreen(),
+        mainScreen: const HomeScreen(),
         menuScreen: const MenuScreen(),
         showShadow: true,
         menuScreenWidth: MediaQuery.of(context).size.width,

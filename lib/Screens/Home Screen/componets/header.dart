@@ -30,28 +30,23 @@ class HomeHeader extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   onChanged: (val){
-
-                    if(val.length > 5) {
-                      context.read<ProductBloc>().add(SearchEvent());
-                    }
-
+                    context.read<ProductBloc>().add(SearchEvent(searchKey: val));
                   },
-                         style: TextStyle(color: Colors.black,fontSize:deviceHeight * 0.022,fontFamily: AppFonts.raleWaySemiBold),
-                        decoration: InputDecoration(
-                          focusedBorder: const OutlineInputBorder(
+                  style: TextStyle(color: Colors.black,fontSize:deviceHeight * 0.022,fontFamily: AppFonts.raleWaySemiBold),
+                  decoration: InputDecoration(
+                  focusedBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(30)),
                               borderSide: BorderSide(
-                                width: 2,
-                                color: AppColors.splashScreenButtonColor,
-                              )
+                              width: 2,
+                              color: AppColors.splashScreenButtonColor,)
                           ),
-                        contentPadding:  EdgeInsets.only(left: 12,top: deviceSize.height *0.02,bottom: deviceSize.height * 0.02),
-                        enabledBorder: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        borderSide: BorderSide(
-                            width: 2,
-                         color: AppColors.homeSearchBorderColor,
-                    )
+                  contentPadding:  EdgeInsets.only(left: 12,top: deviceSize.height *0.02,bottom: deviceSize.height * 0.02),
+                  enabledBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  borderSide: BorderSide(
+                               width: 2,
+                               color: AppColors.homeSearchBorderColor,
+                           )
                 ),
                 hintText: 'Search',
                 hintStyle: const TextStyle(color: AppColors.authFormLabelTextColor,fontSize: 17,fontFamily: AppFonts.raleWaySemiBold),
@@ -61,11 +56,6 @@ class HomeHeader extends StatelessWidget {
                           child: SvgPicture.asset(AppCustomIcons.search),
                         )
                 ),
-                  onEditingComplete: (){
-
-                    context.read<ProductBloc>().add(LoadedEvent());
-
-                  },
               ),
               ),
             ],

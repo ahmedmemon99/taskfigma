@@ -102,6 +102,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Raleway/static/Raleway-SemiBold.ttf
 
+    - family: sfProRounded
+      fonts:
+        - asset: assets/fonts/Sfpro/FontsFree-Net-SF-Pro-Rounded-Semibold.ttf
+
 
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
