@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:taskappfigma/Bloc/Authentication/auth_bloc.dart';
+import 'package:taskappfigma/Bloc/Cart%20Bloc/cart_bloc.dart';
+import 'package:taskappfigma/Bloc/Cart%20Bloc/cart_event.dart';
 import 'package:taskappfigma/Screens/Basket/basket.dart';
 import '../../../AppData/app_colors.dart';
 import '../../../AppData/app_images.dart';
@@ -20,6 +23,7 @@ class BottomNavigation extends StatelessWidget {
           onTap:(index) {
             context.read<NavigationBloc>().navigateScreen(index);
             if(index == 3){
+              context.read<CartBloc>().add(CartLoadedEvent(userid: context.read<AuthBloc>().userid!));
               Navigator.of(context).pushNamed(Basket.routeName);
             }
           },

@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppColors{
   
   static const Color splashTextColor = Color(0xffFFFFFF);
@@ -20,6 +22,7 @@ class AppColors{
   static Color descriptionTextColor = const Color(0xFF000000).withOpacity(0.5);
   static Color basketInfoBannerColor =const Color(0xFFD3F2FF);
   static Color basketItemButtonColor =const Color(0xFF7DCCEC);
+  static Color errorColor =Colors.red;
 
 
 

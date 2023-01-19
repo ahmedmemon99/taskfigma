@@ -1,14 +1,18 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:taskappfigma/Bloc/Authentication/auth_states.dart';
 import 'package:taskappfigma/Bloc/product%20Bloc/bloc_events.dart';
 import 'package:taskappfigma/Bloc/product%20Bloc/bloc_states.dart';
 import 'package:taskappfigma/Models/product.dart';
 import 'package:taskappfigma/Repository/product_repository.dart';
 
+import '../Authentication/auth_bloc.dart';
+
 class ProductBloc extends Bloc<ProductEvents,ProductStates>{
 
   List<Product>? _productList;
+  AuthBloc authBloc;
 
-  ProductBloc() : super(LoadingState(list: [])){
+  ProductBloc({required this.authBloc}) : super(LoadingState(list: [])){
     on<LoadingEvent>(onLoading);
     on<LoadedEvent>(onLoaded);
     on<SearchEvent>(onSearch);
@@ -19,11 +23,12 @@ class ProductBloc extends Bloc<ProductEvents,ProductStates>{
     }
     
   void onLoaded(LoadedEvent event, Emitter<ProductStates> emit)async{
-    emit(LoadingState(list: []));
-    List<Product> list = await ProductRepository.getProducts();
-    _productList =list;
-    emit(LoadedState(list: list));
-
+    if(authBloc.state is LoginSuccessState){
+      emit(LoadingState(list: []));
+      List<Product> list = await ProductRepository.getProducts();
+      _productList =list;
+      emit(LoadedState(list: list));
+    }
   }
 
   void onSearch(SearchEvent event, Emitter<ProductStates> emit){
@@ -40,5 +45,6 @@ class ProductBloc extends Bloc<ProductEvents,ProductStates>{
       emit(LoadedState(list: _productList!));
     }
   }
+
 
 }

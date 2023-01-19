@@ -9,16 +9,14 @@ class ProductRepository{
 
   static Future<List<Product>> getProducts() async{
     try {
+
         http.Response response = await http.get(Uri.parse(ApiUrl.products));
         var data =json.decode(response.body) as List;
         return data.map<Product>((e) => Product.fromJson(e)).toList();
+
     }catch(e){
-       log(e.toString());
+       log('f dsdsdssdd' + e.toString());
        return [];
-    }
+     }
   }
-
-
-
-
 }

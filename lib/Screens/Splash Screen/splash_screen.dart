@@ -39,7 +39,7 @@ class SplashScreen extends StatelessWidget {
               height: deviceHeight * 0.4772,
               child: Image.asset(AppImages.splashImg,)),
           GestureDetector(
-            onTap: () => Navigator.of(context).pushNamed('/authScreen'),
+            onTap: () => Navigator.of(context).pushReplacementNamed('/authScreen'),
             child: Container(
               alignment: Alignment.bottomCenter,
               decoration:  BoxDecoration(
