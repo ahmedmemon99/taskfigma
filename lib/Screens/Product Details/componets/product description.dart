@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:taskappfigma/AppData/app_colors.dart';
 import 'package:taskappfigma/AppData/app_fonts.dart';
 import 'package:taskappfigma/AppData/app_images.dart';
+import 'package:taskappfigma/Bloc/Cart%20Bloc/cart_bloc.dart';
 import 'package:taskappfigma/Screens/Product%20Details/componets/item_color_button.dart';
 import 'package:taskappfigma/common%20widget/custom_button.dart';
 
@@ -51,7 +53,7 @@ class ProductDescription extends StatelessWidget {
                     SizedBox(
                         height: constraints.maxHeight *0.0398,
                         width: constraints.maxWidth *0.1280,
-                        child: const FittedBox(fit: BoxFit.cover,child: Text('Colors',style: TextStyle(fontFamily: AppFonts.raleWayBold),))),
+                        child: const FittedBox(child: Text('Colors',style: TextStyle(fontFamily: AppFonts.raleWayBold),))),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: List.generate(3, (index) => ItemColorButton(constraints: constraints,index: index,))
@@ -94,7 +96,9 @@ class ProductDescription extends StatelessWidget {
                ),
               Padding(
                 padding: EdgeInsets.only(left: constraints.maxWidth * 0.1208,right: constraints.maxWidth * 0.1208),
-                child: CustomButton(onPressed: (){}, text: 'Add to basket',family: AppFonts.raleWayBold,),
+                child: CustomButton(onPressed: (){
+                  //context.read<CartBloc>().add(event)
+                }, text: 'Add to basket',family: AppFonts.raleWayBold,),
               )
             ],
           ),

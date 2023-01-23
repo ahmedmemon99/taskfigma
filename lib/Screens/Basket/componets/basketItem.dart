@@ -56,7 +56,7 @@ class BasketItem extends StatelessWidget {
                                   fontFamily: AppFonts.raleWayBold,
                               ),),
                         SizedBox(height: underConstrains.maxHeight * 0.0538,),
-                        Text(product.price,
+                        Text('\$${product.price}',
                           style: TextStyle(
                             fontSize: constraints.maxHeight * 0.1154,
                             fontFamily: AppFonts.raleWaySemiBold,

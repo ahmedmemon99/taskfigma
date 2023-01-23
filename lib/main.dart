@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taskappfigma/Bloc/Authentication/auth_bloc.dart';
 import 'package:taskappfigma/Bloc/Cart%20Bloc/cart_bloc.dart';
+import 'package:taskappfigma/Bloc/Payment%20bloc/payment_bloc.dart';
 import 'package:taskappfigma/Bloc/bottom%20navigation/navigation_bloc.dart';
 import 'package:taskappfigma/Bloc/product%20Bloc/bloc.dart';
 import 'package:taskappfigma/Routes/routes.dart';
@@ -25,6 +26,7 @@ class TaskFigmaApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AuthBloc()),
+        BlocProvider(create: (context) => PaymentCubit()),
         BlocProvider(create: (context) => ProductBloc(authBloc: context.read<AuthBloc>()),),
         BlocProvider(create: (context) => NavigationBloc()),
         BlocProvider(create: (context) => CartBloc(productBloc: context.read<ProductBloc>()))

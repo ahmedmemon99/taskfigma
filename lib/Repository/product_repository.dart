@@ -15,7 +15,8 @@ class ProductRepository{
         return data.map<Product>((e) => Product.fromJson(e)).toList();
 
     }catch(e){
-       log('f dsdsdssdd' + e.toString());
+      log(e.toString());
+       log('error found in product repository');
        return [];
      }
   }

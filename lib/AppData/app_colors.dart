@@ -23,7 +23,8 @@ class AppColors{
   static Color basketInfoBannerColor =const Color(0xFFD3F2FF);
   static Color basketItemButtonColor =const Color(0xFF7DCCEC);
   static Color errorColor =Colors.red;
-
-
-
+  static Color black =const Color(0xFF000000);
+  static Color paymentCardBgColor = const Color(0xFFF4F6FA);
+  static Color paymentCardBorderColor = const Color(0xFFD6D9E0);
+  static Color bottomSheetProductCountTextColor = const Color(0xFF868686);
 }

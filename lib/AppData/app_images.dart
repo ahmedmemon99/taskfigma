@@ -2,6 +2,10 @@ class AppImages{
 
   static const splashImg = 'assets/images/Saly-19.png';
   static const notfoundImg = 'assets/images/notfound.png';
+  static const masterCard = 'assets/images/mastercard.svg';
+  static const visa = 'assets/images/visa.svg';
+  static const ruPay ='assets/images/ruPay.svg';
+
 
 
 
@@ -30,7 +34,8 @@ class AppCustomIcons{
   static const back = 'assets/images/icons/back.svg';
   static const delete = 'assets/images/icons/Delete.svg';
   static const notification = 'assets/images/icons/Notification.svg';
-
+  static const location ='assets/images/icons/Location.svg';
+  static const call ='assets/images/icons/Call.svg';
 
 
 

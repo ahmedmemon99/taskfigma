@@ -11,3 +11,7 @@ class CartLoadedEvent extends CartEvent{
 
 
 }
+
+class CartTotalEvent extends CartEvent{
+
+}

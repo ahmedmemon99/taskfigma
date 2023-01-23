@@ -32,8 +32,9 @@ class ProductImageHeader extends StatelessWidget {
                 ),
                 Flexible(
                   child: Container(
+                    height: constraints.maxHeight * 0.6725,
                     margin: EdgeInsets.only(left: constraints.maxWidth * 0.2341,right : constraints.maxWidth * 0.2341,bottom: constraints.maxHeight * 0.0934),
-                    child: Image.network(url,),
+                    child: FittedBox(child: Image.network(url,fit: BoxFit.cover,)),
                   ),
                 ),
               ],

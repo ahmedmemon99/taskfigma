@@ -27,7 +27,7 @@ class BasketInfoNotification extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           SvgPicture.asset(AppCustomIcons.notification),
-          Text('Delivery for FREE until the end of the month',style: TextStyle(fontSize: deviceHeight * 0.0112,fontFamily: AppFonts.raleWaySemiBold),),
+          Text('Delivery for FREE until the end of the month',style: TextStyle(fontSize: deviceHeight * 0.0112,fontFamily: AppFonts.raleWayBold),),
         ],
       ),);
   }

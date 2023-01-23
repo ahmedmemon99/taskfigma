@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taskappfigma/Bloc/Cart%20Bloc/cart_bloc.dart';
 import 'package:taskappfigma/Bloc/Cart%20Bloc/cart_state.dart';
+import 'package:taskappfigma/Models/cart.dart';
 import 'package:taskappfigma/Screens/Basket/componets/loading_basketitem.dart';
 import 'basketItem.dart';
 
@@ -20,23 +21,24 @@ class BasketListView extends StatelessWidget {
       height: deviceHeight * 0.55,
       child: BlocBuilder<CartBloc, CartState>(
         builder: (context, state) {
-
            if(state is CartLoadingState){
              return ListView(
-                 physics: const BouncingScrollPhysics(),
+
+                 physics: const NeverScrollableScrollPhysics(),
                  padding: EdgeInsets.zero,
                  children: List.generate(5, (index) => const LoadingBasketItem())
              );
            }
-
            if(state is CartLoadedState){
-             return ListView(
+             return ListView.builder(
                  physics: const BouncingScrollPhysics(),
                  padding: EdgeInsets.zero,
-                 children: state.cart.products.map((e) => BasketItem(productId: e.productId!, quantity: e.quantity!,productList: state.productList,)).toList()
+                 itemCount: state.listOfProducts.length,
+                 itemBuilder: (BuildContext context, int index) {
+                   return BasketItem(productId: state.listOfProducts[index].productId!, quantity: state.listOfProducts[index].quantity!, productList: state.productList);
+                 },
              );
            }
-
               return ListView(
                 physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.zero,

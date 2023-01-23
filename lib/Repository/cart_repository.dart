@@ -12,12 +12,11 @@ class CartRepository{
     try {
          http.Response response = await http.get(Uri.parse('${ApiUrl.userCartUrl}/$id'));
          if (response.statusCode == 200) {
-           var data =json.decode(response.body) as List<Map>;
-           var list = data.map((e) => null).toList()
-           return data.first;
+           var data =json.decode(response.body) as List;
+           var list = data.map<Cart>((e) => Cart.fromJson(e)).toList();
+           return list.first;
          }
     }catch(e){
-      print('entered here');
       log(e.toString());
     }
     return null;

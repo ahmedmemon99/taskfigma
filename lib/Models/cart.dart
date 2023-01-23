@@ -15,7 +15,7 @@ class Cart {
     return Cart(
         id: json['id'],
         userId: json['userId'],
-        products: json['products '] == null ? json['products']: []);
+        products: json['products'] != null ? json['products'].map<Products>((e)=> Products.fromJson(e)).toList(): []);
   }
 }
 
@@ -26,9 +26,12 @@ class Products {
 
   Products({this.productId, this.quantity});
 
-  Products.fromJson(Map<String, dynamic> json) {
-    productId = json['productId'];
-    quantity = json['quantity'];
+  factory Products.fromJson(Map<String, dynamic> json) {
+    return Products(
+      productId: json['productId'] as int,
+      quantity: json['quantity'] as int
+    );
+
   }
 
 }

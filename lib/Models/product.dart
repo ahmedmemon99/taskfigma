@@ -1,11 +1,10 @@
 class Product {
   int id;
   String title;
-  dynamic price;
+  double price;
   String description;
   String category;
   String image;
-
 
   Product({
     required this.id,
@@ -20,7 +19,7 @@ class Product {
     return Product(
       id: json['id'],
       title: json['title'],
-      price: json['price'],
+      price: json['price'].toDouble(),
       description: json['description'],
       category: json['category'],
       image: json['image'],);

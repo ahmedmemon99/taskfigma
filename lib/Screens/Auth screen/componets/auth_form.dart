@@ -61,7 +61,6 @@ class _AuthFormState extends State<AuthForm> {
             SizedBox(height: deviceHeight * 0.04),
             BlocBuilder<AuthBloc, AuthState>(
               builder: (context, state) {
-
                   if(state is AuthLoadingState){
                     return  Container(
                       alignment: Alignment.center,
